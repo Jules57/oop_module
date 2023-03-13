@@ -86,14 +86,14 @@ def play():
         valid_name = validate_name_input(player_name)
     player = Player(name=player_name)
     mode = input('It\'s time to choose the game mode!\n'
-                        'To play the normal mode press N.\n'
-                        'To try the hard mode press H.\n'
-                        'Mode: ').lower()
+                 'To play the normal mode press N.\n'
+                 'To try the hard mode press H.\n'
+                 'Mode: ').lower()
     if mode == 'h':
         player.mode = 'hard'
         level = settings.HARD_MODE_MULTIPLIER
         enemy = Enemy(level)
-    else:
+    elif mode == 'n':
         level = 1
         enemy = Enemy(level)
 
@@ -105,9 +105,9 @@ def play():
             level += 1
             enemy = Enemy(level)
             if mode == 'h':
-                player.score = settings.HARD_MODE_SCORE_GAIN
-            else:
-                player.score = settings.NORMAL_MODE_SCORE_GAIN
+                player.score += settings.HARD_MODE_SCORE_GAIN
+            elif mode == 'n':
+                player.score += settings.NORMAL_MODE_SCORE_GAIN
             print(f'The enemy is defeated! '
                   f'Your score is {player.score}')
 

@@ -36,9 +36,8 @@ class GameOver(Exception):
             sorted_scores = []
             for elem in lines:
                 elem = elem.split()
-                single_list = [elem[0], elem[1], elem[2], elem[3], elem[4]]
-                sorted_scores.append(single_list)
-            sorted_scores.sort(key=lambda x: x[3], reverse=True)
+                sorted_scores.append(elem)
+            sorted_scores.sort(key=lambda x: int(x[3]), reverse=True)
         return sorted_scores
 
     @staticmethod
@@ -53,7 +52,7 @@ class GameOver(Exception):
         with open('scores.txt', 'w+', encoding='utf-8') as outfile:
             for i in range(0, 10):
                 try:
-                    outfile.write(f'{i + 1:^3}'
+                    outfile.write(f'{i + 1:<3}'
                                   f'{score_lists[i][1]:^20} '
                                   f'{score_lists[i][2]:^35} '
                                   f'{score_lists[i][3]:^10} '

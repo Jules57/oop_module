@@ -117,6 +117,10 @@ class Player:
             print('It\'s a draw!')
         elif fight_outcome == 1:
             print('Your attack was successful!')
+            if self.mode == 'hard':
+                self.score += settings.HARD_MODE_MULTIPLIER
+            else:
+                self.score += 1
             enemy_obj.decrease_lives()
         else:
             print('You missed! Better luck next time!')
@@ -143,6 +147,6 @@ class Player:
         elif fight_outcome == 1:
             print('Your defense was unsuccessful!')
             self.decrease_lives()
-            print(f'You have {self.lives} live(s) left.\n')
+            print(f'You have {self.lives} lives left.\n')
         else:
             print('The enemy missed! Ha-ha-ha!')

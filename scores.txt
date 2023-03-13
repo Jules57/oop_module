@@ -1,2 +1,10 @@
- 1        julia                     2023-03-06                  0           hard      
- 2        julia                     2023-03-06                  0          normal     
+1         julia                     2023-03-13                  23          hard      
+2         julia                     2023-03-13                  13         normal     
+3         julia                     2023-03-13                  6           hard      
+4         julia                     2023-03-13                  6           hard      
+5         julia                     2023-03-13                  6           hard      
+6         julia                     2023-03-13                  5          normal     
+7         julia                     2023-03-13                  5          normal     
+8         julia                     2023-03-13                  4           hard      
+9         julia                     2023-03-13                  3           hard      
+10        julia                     2023-03-06                  0           hard      
